@@ -3,107 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>you& Rollie 緣滾滾工作室 ｜ 台式燙布美學 × 漢房香包DIY</title>
-  <meta name="description" content="大稻埕第一間台式燙布美學，結合漢房香包DIY與設計師選物，座落於台北迪化街。">
+  <title>緣滾滾工作室 You & Rollie｜台式燙布美學 × 漢房香包DIY</title>
+  <meta name="description" content="緣滾滾工作室位於台北迪化街，結合台式傳統燙布技法與漢房香包DIY，創造風格獨特的布作商品。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0a0a0a;
       --bg-2: #111111;
-      --bg-3: #161616;
-      --card-bg: #141414;
+      --bg-3: #181818;
+      --card: #141414;
       --card-hover: #1a1a1a;
-      --border: #222222;
+      --border: #1e1e1e;
       --border-light: #2a2a2a;
-      --text: #f0f0f0;
+      --text: #f5f5f5;
       --text-muted: #888888;
       --text-dim: #555555;
       --accent: #e85d3b;
-      --accent-2: #ff7a56;
-      --accent-glow: rgba(232, 93, 59, 0.2);
+      --accent-hover: #ff7a56;
+      --accent-glow: rgba(232, 93, 59, 0.15);
       --highlight: #ffd93d;
-      --tag-bg: #1e1e1e;
+      --tag-bg: #1c1c1c;
+      --nav-height: 60px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Noto Sans TC', 'Inter', sans-serif;
-      background-color: var(--bg);
+      background: var(--bg);
       color: var(--text);
       font-size: 15px;
-      line-height: 1.6;
-      overflow-x: hidden;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    /* === NAVIGATION === */
+    /* ─── NAV ─── */
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: var(--nav-height);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 20px;
-      background: rgba(10, 10, 10, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+      padding: 0 16px;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
     }
-
+    nav.scrolled { border-bottom-color: var(--border); }
     .nav-brand {
       font-family: 'Inter', sans-serif;
-      font-size: 17px;
-      font-weight: 700;
+      font-size: 18px;
+      font-weight: 800;
       letter-spacing: -0.5px;
-      color: var(--text);
     }
-
-    .nav-brand span {
-      color: var(--accent);
-    }
-
+    .nav-brand span { color: var(--accent); }
     .nav-links {
       display: none;
-      gap: 28px;
-      list-style: none;
+      gap: 32px;
     }
-
     .nav-links a {
       font-size: 13px;
       font-weight: 500;
       color: var(--text-muted);
       transition: color 0.2s;
-      letter-spacing: 0.3px;
     }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
+    .nav-links a:hover { color: var(--text); }
     .nav-cta {
       font-size: 12px;
       font-weight: 600;
@@ -112,699 +86,293 @@
       padding: 8px 16px;
       border-radius: 6px;
       transition: background 0.2s, transform 0.2s;
-      letter-spacing: 0.3px;
     }
-
-    .nav-cta:hover {
-      background: var(--accent-2);
-      transform: translateY(-1px);
-    }
-
+    .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
     @media (min-width: 768px) {
-      .nav-links {
-        display: flex;
-      }
-      nav {
-        padding: 12px 32px;
-      }
+      .nav-links { display: flex; }
+      nav { padding: 0 28px; }
     }
 
-    /* === MAIN CONTAINER === */
-    main {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
+    /* ─── LAYOUT ─── */
+    main { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+    section { padding: 56px 0; }
     @media (min-width: 768px) {
-      main {
-        padding: 0 24px;
-      }
+      main { padding: 0 28px; }
+      section { padding: 72px 0; }
     }
 
-    /* === HERO - SUNO SIMPLICITY === */
+    /* ─── HERO ─── */
     .hero {
-      margin-top: 68px;
-      padding: 40px 0 32px;
+      margin-top: var(--nav-height);
+      padding: 48px 0 40px;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 32px;
       align-items: center;
     }
-
-    .hero-content {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .hero-badge {
+    .hero-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       background: var(--tag-bg);
       border: 1px solid var(--border-light);
-      padding: 5px 12px;
       border-radius: 20px;
+      padding: 5px 14px;
       font-size: 11px;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
       margin-bottom: 20px;
     }
-
-    .hero-badge-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--accent);
-      border-radius: 50%;
-    }
-
+    .hero-eyebrow span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
     .hero-title {
-      font-family: 'Noto Sans TC', sans-serif;
-      font-size: clamp(36px, 8vw, 64px);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 16px;
-      letter-spacing: -1px;
+      font-size: clamp(38px, 9vw, 64px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 8px;
     }
-
-    .hero-title span {
+    .hero-title-sub {
+      font-size: clamp(38px, 9vw, 64px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -2px;
       color: var(--accent);
+      display: block;
     }
-
-    .hero-tagline {
+    .hero-desc {
       font-size: 15px;
       color: var(--text-muted);
-      max-width: 420px;
-      margin: 0 auto 28px;
+      max-width: 460px;
+      margin: 16px 0 28px;
       line-height: 1.7;
     }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent);
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: #fff;
+      padding: 13px 24px; border-radius: 8px;
+      font-size: 14px; font-weight: 600;
+      border: none; cursor: pointer;
       transition: all 0.2s;
-      border: none;
-      cursor: pointer;
     }
-
-    .btn-primary:hover {
-      background: var(--accent-2);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px var(--accent-glow);
-    }
-
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 6px 24px var(--accent-glow); }
     .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      color: var(--text);
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 500;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--text);
+      padding: 13px 24px; border-radius: 8px;
+      font-size: 14px; font-weight: 500;
       border: 1px solid var(--border-light);
-      transition: all 0.2s;
-      cursor: pointer;
+      cursor: pointer; transition: all 0.2s;
     }
-
-    .btn-secondary:hover {
-      background: var(--card-bg);
-      border-color: var(--text-muted);
+    .btn-secondary:hover { background: var(--card); border-color: var(--text-muted); }
+    .hero-products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
     }
-
-    .hero-image {
-      width: 180px;
-      height: 180px;
-      margin: 0 auto;
-      border-radius: 20px;
+    .hero-product-thumb {
+      aspect-ratio: 1/1;
+      border-radius: 12px;
       overflow: hidden;
       border: 1px solid var(--border);
-      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+      transition: transform 0.25s;
     }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .hero-product-thumb:hover { transform: scale(1.03); }
+    .hero-product-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-product-thumb:first-child { grid-column: span 1; }
 
     @media (min-width: 900px) {
       .hero {
-        grid-template-columns: 1fr auto;
-        text-align: left;
-        padding: 60px 0 40px;
-        gap: 48px;
+        grid-template-columns: 1fr 320px;
+        padding: 72px 0 56px;
+        gap: 56px;
       }
-
-      .hero-content {
-        text-align: left;
-        margin: 0;
-      }
-
-      .hero-tagline {
-        margin: 0 0 28px;
-      }
-
-      .hero-actions {
-        justify-content: flex-start;
-      }
-
-      .hero-image {
-        width: 200px;
-        height: 200px;
-      }
+      .hero-products { grid-template-columns: repeat(3, 1fr); }
     }
 
-    /* === STATS BAR - REAL NUMBERS ONLY === */
-    .stats-bar {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      padding: 10px 0 24px;
-    }
-
-    .stats-bar-item {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .stats-bar-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--tag-bg);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      flex-shrink: 0;
-    }
-
-    .stats-bar-content {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .stats-bar-number {
-      font-family: 'Inter', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1;
-      letter-spacing: -0.5px;
-    }
-
-    .stats-bar-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 3px;
-    }
-
-    @media (min-width: 768px) {
-      .stats-bar {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
-        padding: 12px 0 32px;
-      }
-
-      .stats-bar-item {
-        padding: 20px;
-      }
-
-      .stats-bar-number {
-        font-size: 22px;
-      }
-    }
-
-    /* === SECTION LABELS === */
+    /* ─── SECTION LABEL ─── */
     .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      font-weight: 600;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+    .section-label::before {
+      content: ''; width: 20px; height: 2px;
+      background: var(--accent); border-radius: 1px;
+    }
+    .section-title {
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      line-height: 1.15;
       margin-bottom: 12px;
     }
 
-    .section-label::before {
-      content: '';
-      width: 16px;
-      height: 2px;
-      background: var(--accent);
-      border-radius: 1px;
+    /* ─── STEPS ─── */
+    .steps-section { padding: 40px 0 48px; border-top: 1px solid var(--border); }
+    .steps-header { margin-bottom: 28px; }
+    .steps-header .section-title { margin-bottom: 4px; }
+    .steps-header p { font-size: 14px; color: var(--text-muted); }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
-
-    /* === PRODUCTS BENTO GRID - AI RESULT CARDS === */
-    .products-section {
-      padding: 20px 0 32px;
-    }
-
-    .products-header {
+    .step-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
       display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-      gap: 10px;
+      gap: 18px;
+      align-items: flex-start;
+      transition: all 0.2s;
     }
-
-    .products-title {
-      font-family: 'Noto Sans TC', sans-serif;
-      font-size: clamp(20px, 3vw, 24px);
-      font-weight: 700;
-      letter-spacing: -0.3px;
-    }
-
-    .products-link {
-      font-size: 13px;
+    .step-card:hover { border-color: var(--border-light); transform: translateY(-2px); }
+    .step-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 36px;
+      font-weight: 800;
       color: var(--accent);
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: gap 0.2s;
+      line-height: 1;
+      letter-spacing: -2px;
+      flex-shrink: 0;
+      width: 48px;
+      text-align: center;
+    }
+    .step-body {}
+    .step-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .step-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+    @media (min-width: 768px) {
+      .steps-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .steps-section { padding: 56px 0 64px; }
     }
 
-    .products-link:hover {
-      gap: 8px;
-    }
-
+    /* ─── PRODUCTS ─── */
+    .products-section { padding: 40px 0 48px; }
+    .products-header { margin-bottom: 20px; }
     .products-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
-
     .product-card {
-      background: var(--card-bg);
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 14px;
       overflow: hidden;
-      transition: all 0.25s ease;
+      transition: all 0.25s;
       cursor: pointer;
-      position: relative;
     }
-
-    .product-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 14px;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-      pointer-events: none;
-      box-shadow: 0 0 30px var(--accent-glow);
-    }
-
     .product-card:hover {
-      background: var(--card-hover);
       border-color: var(--border-light);
-      transform: translateY(-3px) scale(1.01);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     }
-
-    .product-card:hover::after {
-      opacity: 1;
-    }
-
-    .product-card-image {
-      aspect-ratio: 1 / 1;
-      background: var(--bg-2);
+    .product-img {
+      aspect-ratio: 1/1;
       overflow: hidden;
       position: relative;
     }
-
-    .product-card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .product-card:hover .product-card-image img {
-      transform: scale(1.08);
-    }
-
-    .product-card-badge {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      background: var(--accent);
-      color: #fff;
-      font-size: 10px;
-      font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 4px;
+    .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .product-card:hover .product-img img { transform: scale(1.07); }
+    .product-badge {
+      position: absolute; top: 8px; left: 8px;
+      background: var(--accent); color: #fff;
+      font-size: 10px; font-weight: 700;
+      padding: 3px 8px; border-radius: 4px;
       letter-spacing: 0.3px;
     }
-
-    .product-card-body {
-      padding: 14px;
-    }
-
-    .product-card-category {
-      font-size: 10px;
-      color: var(--text-dim);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 4px;
-      font-weight: 500;
-    }
-
-    .product-card-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 10px;
-      line-height: 1.3;
-    }
-
-    .product-card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .product-card-price {
+    .product-body { padding: 14px; }
+    .product-name { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .product-intro { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5; }
+    .product-footer { display: flex; align-items: center; justify-content: space-between; }
+    .product-price {
       font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
+      font-size: 16px; font-weight: 700;
     }
-
-    .product-card-price span {
-      font-size: 11px;
-      color: var(--text-muted);
-      font-weight: 400;
-    }
-
-    .product-card-btn {
-      width: 32px;
-      height: 32px;
+    .product-price small { font-size: 11px; color: var(--text-muted); font-weight: 400; margin-left: 2px; }
+    .product-btn {
+      width: 30px; height: 30px;
       background: var(--tag-bg);
       border: 1px solid var(--border-light);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      color: var(--text-muted);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; color: var(--text-muted);
       transition: all 0.2s;
     }
-
-    .product-card:hover .product-card-btn {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-
+    .product-card:hover .product-btn { background: var(--accent); border-color: var(--accent); color: #fff; }
     @media (min-width: 768px) {
-      .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-      }
-
-      .product-card:nth-child(1) {
-        grid-column: span 2;
-        grid-row: span 2;
-      }
-
-      .product-card:nth-child(1) .product-card-image {
-        aspect-ratio: 1 / 1;
-      }
-
-      .product-card:nth-child(2) {
-        grid-row: span 2;
-      }
-
-      .product-card:nth-child(2) .product-card-image {
-        aspect-ratio: 1 / 1.2;
-      }
+      .products-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .products-section { padding: 56px 0 64px; }
     }
-
     @media (min-width: 1024px) {
-      .products-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .product-card:nth-child(1) {
-        grid-column: span 2;
-        grid-row: span 2;
-      }
+      .products-grid { grid-template-columns: repeat(5, 1fr); }
     }
 
-    /* === SOCIAL PROOF === */
-    .social-proof {
-      padding: 20px 0 32px;
-    }
-
-    .proof-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-    }
-
-    .proof-rating {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .proof-stars {
-      color: var(--highlight);
-      font-size: 16px;
-      letter-spacing: 2px;
-    }
-
-    .proof-text {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .proof-tagline {
-      font-size: 13px;
-      color: var(--text-dim);
-      font-style: italic;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .testimonial-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px;
-      position: relative;
-    }
-
-    .testimonial-card::before {
-      content: '"';
-      position: absolute;
-      top: 8px;
-      right: 16px;
-      font-family: 'Inter', sans-serif;
-      font-size: 60px;
-      font-weight: 700;
-      color: var(--border);
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .testimonial-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .testimonial-avatar {
-      width: 36px;
-      height: 36px;
-      background: var(--tag-bg);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-    }
-
-    .testimonial-author-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .testimonial-purchase {
-      font-size: 11px;
-      color: var(--text-dim);
-    }
-
-    .testimonial-stars {
-      display: flex;
-      gap: 2px;
-      margin-bottom: 10px;
-    }
-
-    .testimonial-stars span {
-      color: var(--highlight);
-      font-size: 13px;
-    }
-
-    .testimonial-text {
-      font-size: 14px;
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    @media (min-width: 768px) {
-      .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-      }
-    }
-
-    /* === FEATURES - PARALLEL CARDS === */
-    .features-section {
-      padding: 20px 0 32px;
-    }
-
-    .features-title {
-      font-size: clamp(20px, 3vw, 24px);
-      font-weight: 700;
-      margin-bottom: 16px;
-      letter-spacing: -0.3px;
-    }
-
+    /* ─── FEATURES ─── */
+    .features-section { padding: 40px 0 48px; border-top: 1px solid var(--border); }
+    .features-header { margin-bottom: 20px; }
     .features-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 10px;
     }
-
     .feature-card {
-      background: var(--card-bg);
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 20px;
       display: flex;
       gap: 16px;
       align-items: flex-start;
-      transition: all 0.2s ease;
+      transition: all 0.2s;
     }
-
-    .feature-card:hover {
-      background: var(--card-hover);
-      border-color: var(--border-light);
-      transform: translateY(-1px);
-    }
-
+    .feature-card:hover { border-color: var(--border-light); transform: translateY(-2px); }
     .feature-icon {
-      width: 40px;
-      height: 40px;
+      width: 44px; height: 44px;
       background: var(--tag-bg);
       border: 1px solid var(--border-light);
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
     }
-
-    .feature-content {
-      flex: 1;
-    }
-
-    .feature-name {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .feature-desc {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
+    .feature-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .feature-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
     @media (min-width: 768px) {
-      .features-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-      }
+      .features-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .features-section { padding: 56px 0 64px; }
+    }
+    @media (min-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(4, 1fr); }
     }
 
-    /* === ABOUT - COMPACT ICON+TEXT === */
-    .about-section {
-      padding: 20px 0 32px;
-    }
-
-    .about-card {
-      background: var(--card-bg);
+    /* ─── STORY ─── */
+    .story-section { padding: 40px 0 48px; border-top: 1px solid var(--border); }
+    .story-card {
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
+      border-radius: 20px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
     }
-
-    .about-heading {
-      font-size: clamp(18px, 3vw, 22px);
-      font-weight: 700;
-      margin-bottom: 12px;
-      line-height: 1.3;
-      letter-spacing: -0.2px;
+    .story-img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
     }
-
-    .about-heading span {
-      color: var(--accent);
-    }
-
-    .about-body {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-
-    .about-values {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .about-value {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    .story-img img { width: 100%; height: 100%; object-fit: cover; }
+    .story-body { padding: 28px 24px; }
+    .story-body .section-title { margin-bottom: 14px; }
+    .story-body p { font-size: 14px; color: var(--text-muted); line-height: 1.85; margin-bottom: 12px; }
+    .story-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .story-tag {
+      display: inline-flex; align-items: center; gap: 6px;
       background: var(--tag-bg);
       border: 1px solid var(--border-light);
       padding: 6px 12px;
@@ -812,453 +380,392 @@
       font-size: 12px;
       color: var(--text-muted);
     }
-
-    .about-value-icon {
-      font-size: 14px;
+    @media (min-width: 768px) {
+      .story-card { grid-template-columns: 1fr 1fr; }
+      .story-img { aspect-ratio: auto; }
+      .story-body { padding: 40px 36px; display: flex; flex-direction: column; justify-content: center; }
+      .story-section { padding: 56px 0 64px; }
     }
 
-    /* === FOOTER === */
-    footer {
-      background: var(--card-bg);
-      border-top: 1px solid var(--border);
-      padding: 32px 20px;
-      margin-top: 24px;
-    }
-
-    .footer-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .footer-top {
+    /* ─── CONTACT ─── */
+    .contact-section { padding: 40px 0 56px; border-top: 1px solid var(--border); }
+    .contact-header { margin-bottom: 20px; }
+    .contact-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 28px;
-      margin-bottom: 24px;
+      gap: 12px;
     }
-
-    .footer-brand {
-      max-width: 300px;
-    }
-
-    .footer-logo {
-      font-family: 'Inter', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .footer-logo span {
-      color: var(--accent);
-    }
-
-    .footer-tagline {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-
-    .footer-social {
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
       display: flex;
-      gap: 10px;
+      gap: 16px;
+      align-items: flex-start;
+      transition: all 0.2s;
+    }
+    .contact-card:hover { border-color: var(--border-light); transform: translateY(-2px); }
+    .contact-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .contact-icon-line { background: rgba(0,185,0,0.15); }
+    .contact-icon-711 { background: rgba(255,153,0,0.12); }
+    .contact-icon-ig { background: rgba(225,48,108,0.12); }
+    .contact-title { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+    .contact-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 13px; font-weight: 600;
+      color: var(--accent);
+      margin-top: 6px;
+      transition: gap 0.2s;
+    }
+    .contact-link:hover { gap: 8px; }
+    @media (min-width: 768px) {
+      .contact-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .contact-section { padding: 56px 0 72px; }
     }
 
-    .footer-social a {
-      width: 40px;
-      height: 40px;
-      background: var(--tag-bg);
-      border: 1px solid var(--border-light);
-      border-radius: 10px;
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 16px;
+    }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+    .footer-top {
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 18px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 10px; }
+    .footer-logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 17px; font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-location { font-size: 12px; color: var(--text-dim); }
+    .footer-social { display: flex; gap: 8px; }
+    .footer-social a {
+      width: 36px; height: 36px;
+      background: var(--tag-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
       color: var(--text-muted);
       transition: all 0.2s;
     }
-
-    .footer-social a:hover {
-      transform: translateY(-2px);
-    }
-
-    .footer-social .social-line:hover {
-      background: #00B900;
-      border-color: #00B900;
-      color: #fff;
-    }
-
-    .footer-social .social-ig:hover {
-      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-      border-color: transparent;
-      color: #fff;
-    }
-
-    .footer-social .social-threads:hover {
-      background: #000;
-      border-color: #fff;
-      color: #fff;
-    }
-
-    .footer-links-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .footer-col-title {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text-dim);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .footer-links a {
-      font-size: 13px;
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: var(--text);
-    }
-
+    .footer-social a:hover { transform: translateY(-2px); color: #fff; }
+    .footer-social a.line:hover { background: #00B900; border-color: #00B900; }
+    .footer-social a.ig:hover { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); border-color: transparent; }
     .footer-bottom {
-      padding-top: 20px;
+      padding-top: 16px;
       border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer-copyright {
-      font-size: 12px;
-      color: var(--text-dim);
-    }
-
-    .footer-ctas {
-      display: flex;
       gap: 10px;
     }
-
+    .footer-copy { font-size: 12px; color: var(--text-dim); }
+    .footer-ctas { display: flex; gap: 8px; }
     .footer-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 12px;
-      font-weight: 600;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px;
+      border-radius: 7px;
+      font-size: 12px; font-weight: 600;
       transition: all 0.2s;
     }
+    .footer-cta-line { background: #00B900; color: #fff; }
+    .footer-cta-line:hover { background: #00a000; transform: translateY(-1px); }
+    .footer-cta-711 { background: var(--tag-bg); border: 1px solid var(--border-light); color: var(--text); }
+    .footer-cta-711:hover { background: var(--card-hover); transform: translateY(-1px); }
+    @media (min-width: 768px) { footer { padding: 28px 28px; } }
 
-    .footer-cta-line {
-      background: #00B900;
-      color: #fff;
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
-    .footer-cta-line:hover {
-      background: #00a000;
-      transform: translateY(-1px);
-    }
-
-    .footer-cta-711 {
-      background: var(--tag-bg);
-      border: 1px solid var(--border-light);
-      color: var(--text);
-    }
-
-    .footer-cta-711:hover {
-      background: var(--card-hover);
-      transform: translateY(-1px);
-    }
-
-    @media (min-width: 768px) {
-      .footer-top {
-        grid-template-columns: 1.2fr 2fr;
-      }
-
-      .footer-links-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      footer {
-        padding: 36px 32px;
-      }
-    }
-
-    /* === ANIMATIONS === */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-in {
-      opacity: 0;
-      animation: fadeInUp 0.4s ease forwards;
-    }
-
-    .delay-1 { animation-delay: 0.05s; }
-    .delay-2 { animation-delay: 0.1s; }
-    .delay-3 { animation-delay: 0.15s; }
-    .delay-4 { animation-delay: 0.2s; }
+    .fade-up { opacity: 0; animation: fadeUp 0.45s ease forwards; }
+    .delay-1 { animation-delay: 0.08s; }
+    .delay-2 { animation-delay: 0.16s; }
+    .delay-3 { animation-delay: 0.24s; }
+    .delay-4 { animation-delay: 0.32s; }
+    .delay-5 { animation-delay: 0.40s; }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
+  <!-- NAV -->
+  <nav id="navbar">
     <a href="#" class="nav-brand">you<span>&</span>Rollie</a>
     <ul class="nav-links">
       <li><a href="#products">商品</a></li>
-      <li><a href="#about">關於</a></li>
-      <li><a href="#features">服務</a></li>
+      <li><a href="#story">緣起</a></li>
+      <li><a href="#features">特色</a></li>
       <li><a href="#contact">聯絡</a></li>
     </ul>
-    <a href="#products" class="nav-cta">逛逛商品</a>
+    <a href="https://line.me/ti/p/~@youandrollie" target="_blank" class="nav-cta">LINE 訂購</a>
   </nav>
 
   <main>
 
-    <!-- HERO - SUNO SIMPLICITY -->
-    <section class="hero">
-      <div class="hero-content animate-in">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          大稻埕人氣手作品牌
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-text">
+        <div class="hero-eyebrow fade-up">
+          <span></span>台北迪化街人氣手作品牌
         </div>
-        <h1 class="hero-title">緣滾滾<span>&nbsp;</span><br>工作室</h1>
-        <p class="hero-tagline">台式燙布美學 × 漢房香包DIY。每一件都是手工限定的布作好物。</p>
-        <div class="hero-actions">
+        <h1 class="hero-title fade-up delay-1">
+          緣滾滾<br>
+          <span class="hero-title-sub">工作室</span>
+        </h1>
+        <p class="hero-desc fade-up delay-2">台式燙布美學 × 漢房香包DIY。每一件都是手工限定的布作好物，來自大稻埕的溫度。</p>
+        <div class="hero-actions fade-up delay-3">
           <a href="#products" class="btn-primary">
             逛逛商品
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#about" class="btn-secondary">了解更多</a>
+          <a href="#story" class="btn-secondary">品牌故事</a>
         </div>
       </div>
-      <div class="hero-image animate-in delay-1">
-        <img src="images/product-wristband-cherry.jpg" alt="緣滾滾工作室商品">
-      </div>
-    </section>
-
-    <!-- STATS BAR - REAL NUMBERS ONLY -->
-    <section class="stats-bar">
-      <div class="stats-bar-item animate-in delay-1">
-        <div class="stats-bar-icon">🎨</div>
-        <div class="stats-bar-content">
-          <div class="stats-bar-number">NT$150 起</div>
-          <div class="stats-bar-label">親民價格</div>
+      <div class="hero-products fade-up delay-2">
+        <div class="hero-product-thumb">
+          <img src="images/product-wristband-cherry.jpg" alt="手腕帶" loading="eager">
         </div>
-      </div>
-      <div class="stats-bar-item animate-in delay-2">
-        <div class="stats-bar-icon">🧵</div>
-        <div class="stats-bar-content">
-          <div class="stats-bar-number">100%</div>
-          <div class="stats-bar-label">手工製作</div>
+        <div class="hero-product-thumb">
+          <img src="images/product-pouch-green.jpg" alt="收納包" loading="eager">
         </div>
-      </div>
-      <div class="stats-bar-item animate-in delay-3">
-        <div class="stats-bar-icon">📦</div>
-        <div class="stats-bar-content">
-          <div class="stats-bar-number">7-11</div>
-          <div class="stats-bar-label">全台可寄送</div>
+        <div class="hero-product-thumb">
+          <img src="images/product-sachet-red.jpg" alt="香包" loading="eager">
         </div>
-      </div>
-      <div class="stats-bar-item animate-in delay-4">
-        <div class="stats-bar-icon">✂️</div>
-        <div class="stats-bar-content">
-          <div class="stats-bar-number">1-3 天</div>
-          <div class="stats-bar-label">出貨時間</div>
+        <div class="hero-product-thumb">
+          <img src="images/product-patches.jpg" alt="燙布貼" loading="eager">
+        </div>
+        <div class="hero-product-thumb">
+          <img src="images/product-coinpurse.jpg" alt="零錢包" loading="eager">
         </div>
       </div>
     </section>
 
-    <!-- PRODUCTS BENTO GRID -->
+    <!-- STEPS 01/02/03 -->
+    <section class="steps-section" id="steps">
+      <div class="steps-header">
+        <div class="section-label">如何訂購</div>
+        <h2 class="section-title">三步驟完成訂購</h2>
+        <p>選擇喜歡的商品，加入 LINE 完成訂購，全台 7-11 取貨付款。</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card fade-up delay-1">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <div class="step-title">選擇商品</div>
+            <div class="step-desc">瀏覽感興趣的商品，確認品項、顏色與數量，記下商品名稱與價格。</div>
+          </div>
+        </div>
+        <div class="step-card fade-up delay-2">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <div class="step-title">填寫表單</div>
+            <div class="step-desc">加入 LINE @youandrollie，告訴我們想要的商品、數量、寄送門市與聯絡方式。</div>
+          </div>
+        </div>
+        <div class="step-card fade-up delay-3">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <div class="step-title">完成訂購</div>
+            <div class="step-desc">確認款式後工廠排單，1-3 天出貨，全台 7-11 賣貨便到你手中，貨到付款。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
     <section class="products-section" id="products">
       <div class="products-header">
-        <div>
-          <div class="section-label">精選商品</div>
-          <h2 class="products-title">人氣熱賣手工布作</h2>
-        </div>
-        <a href="#" class="products-link">
-          看全部商品
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <div class="section-label">精選商品</div>
+        <h2 class="section-title">全手工燙布作品</h2>
       </div>
       <div class="products-grid">
-        <!-- Product 1: Large Featured -->
-        <div class="product-card animate-in">
-          <div class="product-card-image">
-            <img src="images/product-wristband-cherry.jpg" alt="運動腕帶" loading="lazy">
-            <span class="product-card-badge">熱銷</span>
+        <div class="product-card fade-up delay-1">
+          <div class="product-img">
+            <img src="images/product-wristband-cherry.jpg" alt="手腕帶" loading="lazy">
+            <span class="product-badge">熱銷</span>
           </div>
-          <div class="product-card-body">
-            <div class="product-card-category">腕帶</div>
-            <div class="product-card-name">Cherry 燙布運動腕帶</div>
-            <div class="product-card-footer">
-              <div class="product-card-price">NT$180 <span>含包裝</span></div>
-              <div class="product-card-btn">+</div>
+          <div class="product-body">
+            <div class="product-name">Cherry 燙布手腕帶</div>
+            <div class="product-intro">吸濕排汗面料結合手工燙布圖案，運動與日常皆適用。</div>
+            <div class="product-footer">
+              <div class="product-price">NT$280<small>含包裝</small></div>
+              <div class="product-btn">+</div>
             </div>
           </div>
         </div>
-        <!-- Product 2: Tall -->
-        <div class="product-card animate-in delay-1">
-          <div class="product-card-image">
-            <img src="images/product-pouch-green.jpg" alt="束口包" loading="lazy">
-            <span class="product-card-badge">新款</span>
+        <div class="product-card fade-up delay-2">
+          <div class="product-img">
+            <img src="images/product-pouch-green.jpg" alt="收納包" loading="lazy">
+            <span class="product-badge">新款</span>
           </div>
-          <div class="product-card-body">
-            <div class="product-card-category">束口包</div>
-            <div class="product-card-name">森林綠束口小包</div>
-            <div class="product-card-footer">
-              <div class="product-card-price">NT$280 <span>含包裝</span></div>
-              <div class="product-card-btn">+</div>
+          <div class="product-body">
+            <div class="product-name">森林綠束口收納包</div>
+            <div class="product-intro">厚實棉布材質，大容量束口設計，可收納化妝品、耳機、線材。</div>
+            <div class="product-footer">
+              <div class="product-price">NT$450<small>含包裝</small></div>
+              <div class="product-btn">+</div>
             </div>
           </div>
         </div>
-        <!-- Product 3 -->
-        <div class="product-card animate-in delay-2">
-          <div class="product-card-image">
+        <div class="product-card fade-up delay-3">
+          <div class="product-img">
             <img src="images/product-sachet-red.jpg" alt="香包" loading="lazy">
+            <span class="product-badge">人氣</span>
           </div>
-          <div class="product-card-body">
-            <div class="product-card-category">香包</div>
-            <div class="product-card-name">喜氣紅中式香包</div>
-            <div class="product-card-footer">
-              <div class="product-card-price">NT$220 <span>含包裝</span></div>
-              <div class="product-card-btn">+</div>
+          <div class="product-body">
+            <div class="product-name">喜氣紅漢房香包</div>
+            <div class="product-intro">傳統漢房香包技法，內餡天然草本，穿繩設計可懸掛或隨身攜帶。</div>
+            <div class="product-footer">
+              <div class="product-price">NT$250<small>含包裝</small></div>
+              <div class="product-btn">+</div>
             </div>
           </div>
         </div>
-        <!-- Product 4 -->
-        <div class="product-card animate-in delay-3">
-          <div class="product-card-image">
-            <img src="images/product-patches.jpg" alt="布貼" loading="lazy">
+        <div class="product-card fade-up delay-4">
+          <div class="product-img">
+            <img src="images/product-patches.jpg" alt="燙布貼" loading="lazy">
           </div>
-          <div class="product-card-body">
-            <div class="product-card-category">布貼</div>
-            <div class="product-card-name">復古風布貼組</div>
-            <div class="product-card-footer">
-              <div class="product-card-price">NT$150 <span>含包裝</span></div>
-              <div class="product-card-btn">+</div>
+          <div class="product-body">
+            <div class="product-name">復古風燙布貼組</div>
+            <div class="product-intro">多款圖案可自由燙合，適用於衣服、袋子、帽子，輕鬆打造個人風格。</div>
+            <div class="product-footer">
+              <div class="product-price">NT$150<small>含包裝</small></div>
+              <div class="product-btn">+</div>
             </div>
           </div>
         </div>
-        <!-- Product 5 -->
-        <div class="product-card animate-in delay-4">
-          <div class="product-card-image">
+        <div class="product-card fade-up delay-5">
+          <div class="product-img">
             <img src="images/product-coinpurse.jpg" alt="零錢包" loading="lazy">
-            <span class="product-card-badge">限定</span>
+            <span class="product-badge">限定</span>
           </div>
-          <div class="product-card-body">
-            <div class="product-card-category">零錢包</div>
-            <div class="product-card-name">經典款燙布零錢包</div>
-            <div class="product-card-footer">
-              <div class="product-card-price">NT$350 <span>含包裝</span></div>
-              <div class="product-card-btn">+</div>
+          <div class="product-body">
+            <div class="product-name">經典款燙布零錢包</div>
+            <div class="product-intro">小巧精緻，磁扣開合，適合收納零錢、卡片或小型隨身物品。</div>
+            <div class="product-footer">
+              <div class="product-price">NT$220<small>含包裝</small></div>
+              <div class="product-btn">+</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SOCIAL PROOF -->
-    <section class="social-proof">
-      <div class="proof-header">
-        <div class="proof-rating">
-          <span class="proof-stars">★★★★★</span>
-          <span class="proof-text">5.0 滿意度</span>
-        </div>
-        <span class="proof-tagline">專注手工服務每一件</span>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <div class="testimonial-avatar">👧</div>
-            <div>
-              <div class="testimonial-author-name">林小美</div>
-              <div class="testimonial-purchase">購買了森林綠束口小包</div>
-            </div>
-          </div>
-          <div class="testimonial-stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <p class="testimonial-text">很喜歡這次的束口包！做工很細緻，包裝也很精美，送給朋友當生日禮物超合適的～下次會再回購！</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <div class="testimonial-avatar">👦</div>
-            <div>
-              <div class="testimonial-author-name">陳先生</div>
-              <div class="testimonial-purchase">購買了 Cherry 運動腕帶</div>
-            </div>
-          </div>
-          <div class="testimonial-stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <p class="testimonial-text">健身用的腕帶很好用，吸水效果不錯，燙布圖案也很可愛。重點是包裝很用心，送禮很有面子！</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURES - PARALLEL CARDS -->
+    <!-- FEATURES -->
     <section class="features-section" id="features">
-      <div class="section-label">服務特色</div>
-      <h2 class="features-title">為什麼選擇緣滾滾？</h2>
+      <div class="features-header">
+        <div class="section-label">服務特色</div>
+        <h2 class="section-title">緣滾滾的堅持</h2>
+      </div>
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🧵</div>
-          <div class="feature-content">
-            <div class="feature-name">全手工製作</div>
-            <div class="feature-desc">每一件作品都是手工裁剪、燙布、縫製，保有手作的溫度與獨特性。</div>
+        <div class="feature-card fade-up delay-1">
+          <div class="feature-icon">🔥</div>
+          <div>
+            <div class="feature-title">台式燙布 DIY</div>
+            <div class="feature-desc">結合傳統與創新，每件燙布圖案皆由手工排列定位，保留手作溫度感。</div>
           </div>
         </div>
-        <div class="feature-card">
+        <div class="feature-card fade-up delay-2">
+          <div class="feature-icon">🧧</div>
+          <div>
+            <div class="feature-title">漢房香包</div>
+            <div class="feature-desc">遵循漢房古法，天然草本內餡製成，帶有淡雅香氣，可作為車掛、室內香飾或隨身香囊。</div>
+          </div>
+        </div>
+        <div class="feature-card fade-up delay-3">
           <div class="feature-icon">🎁</div>
-          <div class="feature-content">
-            <div class="feature-name">精美包裝</div>
-            <div class="feature-desc">適合送禮，下單即可選擇禮品包裝服務，含精美外盒與手寫小卡。</div>
+          <div>
+            <div class="feature-title">禮品包裝</div>
+            <div class="feature-desc">每件商品皆附精美包裝，適合送禮。下單時可加價升級禮盒包裝，含手寫小卡服務。</div>
           </div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🚚</div>
-          <div class="feature-content">
-            <div class="feature-name">7-11 賣貨便</div>
-            <div class="feature-desc">全台 7-11 皆可取貨付款，物流快速，追蹤便利，購物零負擔。</div>
+        <div class="feature-card fade-up delay-4">
+          <div class="feature-icon">✏️</div>
+          <div>
+            <div class="feature-title">客製化服務</div>
+            <div class="feature-desc">可指定圖案配色、燙合位置，或訂製個人專屬文字，打造獨一無二的手作品。</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT - COMPACT -->
-    <section class="about-section" id="about">
-      <div class="about-card">
-        <div class="section-label">關於我們</div>
-        <h2 class="about-heading">大稻埕的<span>&nbsp;布作工作室</span></h2>
-        <p class="about-body">緣滾滾工作室成立於台北迪化街，結合台式傳統燙布技法與現代設計美學，創造出風格獨特的布作商品。我們相信，手作的溫度是機器無法取代的。</p>
-        <div class="about-values">
-          <span class="about-value"><span class="about-value-icon">📍</span> 台北迪化街</span>
-          <span class="about-value"><span class="about-value-icon">🧵</span> 手工製作</span>
-          <span class="about-value"><span class="about-value-icon">🎨</span> 燙布美學</span>
-          <span class="about-value"><span class="about-value-icon">💝</span> 送禮自用</span>
+    <!-- STORY -->
+    <section class="story-section" id="story">
+      <div class="section-label">緣起故事</div>
+      <h2 class="section-title" style="margin-bottom:20px">大稻埕的布作工作室</h2>
+      <div class="story-card fade-up">
+        <div class="story-img">
+          <img src="images/product-wristband-cherry.jpg" alt="大稻埕迪化街">
+        </div>
+        <div class="story-body">
+          <p>大稻埕是台北最具歷史意義的街區之一，茶葉、布料、中藥材在這裡交匯了百年歲月。緣滾滾工作室誕生於迪化街的老巷弄裡，將傳統台式燙布技法傳承並重新演繹，融入漢房香包的手作工藝，創造出屬於這個時代的布作美學。</p>
+          <p>我們相信，手作的溫度是機器無法取代的。每一件商品從裁布、燙合到包裝，都承載著師傅雙手的觸感與心意。走進迪化街，帶走一件緣滾滾的作品，也帶走一段大稻埕的故事。</p>
+          <div class="story-tags">
+            <span class="story-tag">📍 台北迪化街</span>
+            <span class="story-tag">🧵 全手工製作</span>
+            <span class="story-tag">🔥 台式燙布美學</span>
+            <span class="story-tag">🧧 漢房香包 DIY</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="contact-header">
+        <div class="section-label">聯絡與出貨</div>
+        <h2 class="section-title">開始你的訂購</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card fade-up delay-1">
+          <div class="contact-icon contact-icon-line">💬</div>
+          <div>
+            <div class="contact-title">LINE 官方帳號</div>
+            <div class="contact-desc">加入 @youandrollie，線上直接詢問與下單，快速回覆。</div>
+            <a href="https://line.me/ti/p/~@youandrollie" target="_blank" class="contact-link">
+              加入 LINE
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="contact-card fade-up delay-2">
+          <div class="contact-icon contact-icon-711">🏪</div>
+          <div>
+            <div class="contact-title">7-11 賣貨便</div>
+            <div class="contact-desc">全台 7-11 門市皆可取貨，貨到付款。1-3 個工作天出貨，物流追蹤便利。</div>
+            <a href="#steps" class="contact-link">
+              了解更多流程
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="contact-card fade-up delay-3">
+          <div class="contact-icon contact-icon-ig">📷</div>
+          <div>
+            <div class="contact-title">Instagram</div>
+            <div class="contact-desc">追蹤 @youandrollie_official，查看最新商品與工作室日常。</div>
+            <a href="https://instagram.com/youandrollie_official" target="_blank" class="contact-link">
+              追蹤 IG
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -1266,62 +773,48 @@
   </main>
 
   <!-- FOOTER -->
-  <footer id="contact">
+  <footer>
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logo">you<span>&</span>Rollie</div>
-          <p class="footer-tagline">台式燙布美學 × 漢房香包DIY。每一件都是手工限定的布作好物。</p>
-          <div class="footer-social">
-            <a href="#" class="social-line" aria-label="LINE">💬</a>
-            <a href="#" class="social-ig" aria-label="Instagram">📷</a>
-            <a href="#" class="social-threads" aria-label="Threads">🧵</a>
-          </div>
+          <div class="footer-location">📍 台北迪化街</div>
         </div>
-        <div class="footer-links-grid">
-          <div>
-            <div class="footer-col-title">商品分類</div>
-            <ul class="footer-links">
-              <li><a href="#">運動腕帶</a></li>
-              <li><a href="#">束口包</a></li>
-              <li><a href="#">香包</a></li>
-              <li><a href="#">布貼</a></li>
-              <li><a href="#">零錢包</a></li>
-            </ul>
-          </div>
-          <div>
-            <div class="footer-col-title">資訊</div>
-            <ul class="footer-links">
-              <li><a href="#">關於我們</a></li>
-              <li><a href="#">購物說明</a></li>
-              <li><a href="#">退換政策</a></li>
-              <li><a href="#">常見問題</a></li>
-            </ul>
-          </div>
-          <div>
-            <div class="footer-col-title">聯絡我們</div>
-            <ul class="footer-links">
-              <li><a href="#">LINE 官方</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Threads</a></li>
-              <li><a href="#">Email</a></li>
-            </ul>
-          </div>
+        <div class="footer-social">
+          <a href="https://line.me/ti/p/~@youandrollie" target="_blank" class="line" title="LINE">💬</a>
+          <a href="https://instagram.com/youandrollie_official" target="_blank" class="ig" title="Instagram">📷</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copyright">© 2026 you& Rollie 緣滾滾工作室</p>
+        <div class="footer-copy">© 2026 you& Rollie 緣滾滾工作室</div>
         <div class="footer-ctas">
-          <a href="#" class="footer-cta footer-cta-line">
-            💬 加入 LINE
-          </a>
-          <a href="#" class="footer-cta footer-cta-711">
-            🏪 7-11 賣貨便
-          </a>
+          <a href="https://line.me/ti/p/~@youandrollie" target="_blank" class="footer-cta footer-cta-line">💬 加入 LINE</a>
+          <a href="#" class="footer-cta footer-cta-711">🏪 7-11 賣貨便</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // Intersection Observer for fade-up
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
