@@ -22,7 +22,7 @@
       --text-dim: #555555;
       --accent: #e85d3b;
       --accent-2: #ff7a56;
-      --accent-glow: rgba(232, 93, 59, 0.15);
+      --accent-glow: rgba(232, 93, 59, 0.2);
       --highlight: #ffd93d;
       --tag-bg: #1e1e1e;
     }
@@ -67,8 +67,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 24px;
-      background: rgba(10, 10, 10, 0.8);
+      padding: 14px 20px;
+      background: rgba(10, 10, 10, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
@@ -76,7 +76,7 @@
 
     .nav-brand {
       font-family: 'Inter', sans-serif;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       letter-spacing: -0.5px;
       color: var(--text);
@@ -88,7 +88,7 @@
 
     .nav-links {
       display: none;
-      gap: 32px;
+      gap: 28px;
       list-style: none;
     }
 
@@ -97,7 +97,7 @@
       font-weight: 500;
       color: var(--text-muted);
       transition: color 0.2s;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
     }
 
     .nav-links a:hover {
@@ -109,10 +109,10 @@
       font-weight: 600;
       background: var(--accent);
       color: #fff;
-      padding: 8px 18px;
+      padding: 8px 16px;
       border-radius: 6px;
       transition: background 0.2s, transform 0.2s;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
     }
 
     .nav-cta:hover {
@@ -125,7 +125,7 @@
         display: flex;
       }
       nav {
-        padding: 14px 32px;
+        padding: 12px 32px;
       }
     }
 
@@ -142,37 +142,20 @@
       }
     }
 
-    /* === HERO BENTO === */
+    /* === HERO - SUNO SIMPLICITY === */
     .hero {
-      margin-top: 72px;
-      padding: 24px 0;
+      margin-top: 68px;
+      padding: 40px 0 32px;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 24px;
+      align-items: center;
     }
 
-    .hero-main {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 280px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-main::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-      pointer-events: none;
+    .hero-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .hero-badge {
@@ -181,12 +164,11 @@
       gap: 6px;
       background: var(--tag-bg);
       border: 1px solid var(--border-light);
-      padding: 6px 12px;
+      padding: 5px 12px;
       border-radius: 20px;
       font-size: 11px;
       font-weight: 500;
       color: var(--text-muted);
-      width: fit-content;
       margin-bottom: 20px;
     }
 
@@ -199,29 +181,29 @@
 
     .hero-title {
       font-family: 'Noto Sans TC', sans-serif;
-      font-size: clamp(28px, 5vw, 40px);
+      font-size: clamp(36px, 8vw, 64px);
       font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 12px;
-      letter-spacing: -0.5px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
     }
 
-    .hero-title em {
-      font-style: normal;
+    .hero-title span {
       color: var(--accent);
     }
 
-    .hero-desc {
-      font-size: 14px;
+    .hero-tagline {
+      font-size: 15px;
       color: var(--text-muted);
-      max-width: 400px;
+      max-width: 420px;
+      margin: 0 auto 28px;
       line-height: 1.7;
-      margin-bottom: 24px;
     }
 
     .hero-actions {
       display: flex;
       gap: 12px;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
@@ -231,9 +213,9 @@
       gap: 8px;
       background: var(--accent);
       color: #fff;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 8px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
       transition: all 0.2s;
       border: none;
@@ -243,6 +225,7 @@
     .btn-primary:hover {
       background: var(--accent-2);
       transform: translateY(-1px);
+      box-shadow: 0 4px 20px var(--accent-glow);
     }
 
     .btn-secondary {
@@ -251,9 +234,9 @@
       gap: 8px;
       background: transparent;
       color: var(--text);
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 8px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
       border: 1px solid var(--border-light);
       transition: all 0.2s;
@@ -265,64 +248,112 @@
       border-color: var(--text-muted);
     }
 
-    .hero-aside {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .hero-stat-card {
-      background: var(--card-bg);
+    .hero-image {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
     }
 
-    .hero-stat-card:first-child {
-      border-top: 2px solid var(--accent);
-    }
-
-    .stat-number {
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(28px, 4vw, 36px);
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -1px;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .stat-number span {
-      color: var(--accent);
-    }
-
-    .stat-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      font-weight: 500;
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     @media (min-width: 900px) {
       .hero {
-        grid-template-columns: 3fr 2fr;
-        padding: 32px 0;
+        grid-template-columns: 1fr auto;
+        text-align: left;
+        padding: 60px 0 40px;
+        gap: 48px;
       }
 
-      .hero-main {
-        min-height: 340px;
-        padding: 40px;
+      .hero-content {
+        text-align: left;
+        margin: 0;
       }
 
-      .hero-aside {
-        grid-template-columns: 1fr;
+      .hero-tagline {
+        margin: 0 0 28px;
+      }
+
+      .hero-actions {
+        justify-content: flex-start;
+      }
+
+      .hero-image {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    /* === STATS BAR - REAL NUMBERS ONLY === */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 10px 0 24px;
+    }
+
+    .stats-bar-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .stats-bar-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--tag-bg);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .stats-bar-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .stats-bar-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      letter-spacing: -0.5px;
+    }
+
+    .stats-bar-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    @media (min-width: 768px) {
+      .stats-bar {
+        grid-template-columns: repeat(4, 1fr);
         gap: 12px;
+        padding: 12px 0 32px;
       }
 
-      .hero-stat-card {
-        padding: 28px;
+      .stats-bar-item {
+        padding: 20px;
+      }
+
+      .stats-bar-number {
+        font-size: 22px;
       }
     }
 
@@ -336,7 +367,7 @@
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .section-label::before {
@@ -347,88 +378,23 @@
       border-radius: 1px;
     }
 
-    /* === STATS BAR === */
-    .stats-bar {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      padding: 12px 0;
-    }
-
-    .stats-bar-item {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .stats-bar-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--tag-bg);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-
-    .stats-bar-content {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .stats-bar-number {
-      font-family: 'Inter', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1;
-      letter-spacing: -0.5px;
-    }
-
-    .stats-bar-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    @media (min-width: 768px) {
-      .stats-bar {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
-      }
-
-      .stats-bar-item {
-        padding: 24px;
-      }
-
-      .stats-bar-number {
-        font-size: 26px;
-      }
-    }
-
-    /* === PRODUCTS BENTO GRID === */
+    /* === PRODUCTS BENTO GRID - AI RESULT CARDS === */
     .products-section {
-      padding: 32px 0;
+      padding: 20px 0 32px;
     }
 
     .products-header {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
 
     .products-title {
       font-family: 'Noto Sans TC', sans-serif;
-      font-size: clamp(22px, 3vw, 28px);
+      font-size: clamp(20px, 3vw, 24px);
       font-weight: 700;
       letter-spacing: -0.3px;
     }
@@ -450,28 +416,38 @@
     .products-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      gap: 10px;
     }
 
     .product-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 14px;
       overflow: hidden;
       transition: all 0.25s ease;
       cursor: pointer;
+      position: relative;
+    }
+
+    .product-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 14px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+      box-shadow: 0 0 30px var(--accent-glow);
     }
 
     .product-card:hover {
       background: var(--card-hover);
       border-color: var(--border-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transform: translateY(-3px) scale(1.01);
     }
 
-    .product-card:nth-child(1),
-    .product-card:nth-child(2) {
-      grid-column: span 1;
+    .product-card:hover::after {
+      opacity: 1;
     }
 
     .product-card-image {
@@ -489,24 +465,24 @@
     }
 
     .product-card:hover .product-card-image img {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
     .product-card-badge {
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 8px;
+      left: 8px;
       background: var(--accent);
       color: #fff;
       font-size: 10px;
       font-weight: 600;
-      padding: 4px 8px;
+      padding: 3px 8px;
       border-radius: 4px;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
     }
 
     .product-card-body {
-      padding: 16px;
+      padding: 14px;
     }
 
     .product-card-category {
@@ -514,15 +490,15 @@
       color: var(--text-dim);
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       font-weight: 500;
     }
 
     .product-card-name {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--text);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       line-height: 1.3;
     }
 
@@ -530,25 +506,24 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 12px;
     }
 
     .product-card-price {
       font-family: 'Inter', sans-serif;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--text);
     }
 
     .product-card-price span {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--text-muted);
       font-weight: 400;
     }
 
     .product-card-btn {
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       background: var(--tag-bg);
       border: 1px solid var(--border-light);
       border-radius: 8px;
@@ -569,15 +544,16 @@
     @media (min-width: 768px) {
       .products-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+        gap: 14px;
       }
 
       .product-card:nth-child(1) {
         grid-column: span 2;
+        grid-row: span 2;
       }
 
       .product-card:nth-child(1) .product-card-image {
-        aspect-ratio: 16 / 10;
+        aspect-ratio: 1 / 1;
       }
 
       .product-card:nth-child(2) {
@@ -585,7 +561,7 @@
       }
 
       .product-card:nth-child(2) .product-card-image {
-        aspect-ratio: 1 / 1.5;
+        aspect-ratio: 1 / 1.2;
       }
     }
 
@@ -598,39 +574,151 @@
         grid-column: span 2;
         grid-row: span 2;
       }
+    }
 
-      .product-card:nth-child(1) .product-card-image {
-        aspect-ratio: 1 / 1;
+    /* === SOCIAL PROOF === */
+    .social-proof {
+      padding: 20px 0 32px;
+    }
+
+    .proof-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .proof-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .proof-stars {
+      color: var(--highlight);
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    .proof-text {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .proof-tagline {
+      font-size: 13px;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 8px;
+      right: 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 60px;
+      font-weight: 700;
+      color: var(--border);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 36px;
+      height: 36px;
+      background: var(--tag-bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .testimonial-author-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .testimonial-purchase {
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-stars span {
+      color: var(--highlight);
+      font-size: 13px;
+    }
+
+    .testimonial-text {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
       }
     }
 
-    /* === FEATURES BENTO === */
+    /* === FEATURES - PARALLEL CARDS === */
     .features-section {
-      padding: 32px 0;
+      padding: 20px 0 32px;
     }
 
     .features-title {
-      font-size: clamp(22px, 3vw, 28px);
+      font-size: clamp(20px, 3vw, 24px);
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       letter-spacing: -0.3px;
     }
 
     .features-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 10px;
     }
 
     .feature-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
+      border-radius: 14px;
+      padding: 20px;
       display: flex;
-      gap: 20px;
+      gap: 16px;
       align-items: flex-start;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
     }
 
     .feature-card:hover {
@@ -640,15 +728,15 @@
     }
 
     .feature-icon {
-      width: 48px;
-      height: 48px;
+      width: 40px;
+      height: 40px;
       background: var(--tag-bg);
       border: 1px solid var(--border-light);
-      border-radius: 12px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
+      font-size: 18px;
       flex-shrink: 0;
     }
 
@@ -657,10 +745,10 @@
     }
 
     .feature-name {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
       color: var(--text);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .feature-desc {
@@ -669,56 +757,34 @@
       line-height: 1.6;
     }
 
-    .feature-tag {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 10px;
-      font-weight: 600;
-      color: var(--accent);
-      background: var(--accent-glow);
-      padding: 4px 8px;
-      border-radius: 4px;
-      letter-spacing: 0.5px;
-    }
-
     @media (min-width: 768px) {
       .features-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+        gap: 14px;
       }
     }
 
-    /* === ABOUT / SPLIT BENTO === */
+    /* === ABOUT - COMPACT ICON+TEXT === */
     .about-section {
-      padding: 32px 0;
+      padding: 20px 0 32px;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .about-content {
+    .about-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      border-radius: 14px;
+      padding: 24px;
     }
 
     .about-heading {
-      font-size: clamp(20px, 3vw, 26px);
+      font-size: clamp(18px, 3vw, 22px);
       font-weight: 700;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       line-height: 1.3;
-      letter-spacing: -0.3px;
+      letter-spacing: -0.2px;
     }
 
-    .about-heading em {
-      font-style: normal;
+    .about-heading span {
       color: var(--accent);
     }
 
@@ -726,16 +792,16 @@
       font-size: 14px;
       color: var(--text-muted);
       line-height: 1.8;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
-    .about-highlights {
+    .about-values {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    .about-highlight {
+    .about-value {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -747,148 +813,16 @@
       color: var(--text-muted);
     }
 
-    .about-highlight-icon {
+    .about-value-icon {
       font-size: 14px;
-    }
-
-    .about-image-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .about-image-card img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-    }
-
-    .about-image-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 20px;
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-    }
-
-    .about-image-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--highlight);
-      background: rgba(0,0,0,0.5);
-      padding: 6px 10px;
-      border-radius: 6px;
-    }
-
-    @media (min-width: 768px) {
-      .about-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-      }
-
-      .about-image-card img {
-        aspect-ratio: 3 / 4;
-      }
-    }
-
-    /* === TESTIMONIAL BENTO === */
-    .testimonial-section {
-      padding: 32px 0;
-    }
-
-    .testimonial-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .testimonial-card::before {
-      content: '"';
-      position: absolute;
-      top: -10px;
-      right: 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 120px;
-      font-weight: 700;
-      color: var(--border);
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .testimonial-stars {
-      display: flex;
-      gap: 3px;
-      margin-bottom: 16px;
-    }
-
-    .testimonial-stars span {
-      color: var(--highlight);
-      font-size: 16px;
-    }
-
-    .testimonial-text {
-      font-size: 15px;
-      color: var(--text);
-      line-height: 1.8;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .testimonial-avatar {
-      width: 40px;
-      height: 40px;
-      background: var(--tag-bg);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-    }
-
-    .testimonial-author-info {
-      flex: 1;
-    }
-
-    .testimonial-author-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .testimonial-author-meta {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .testimonial-platform {
-      font-size: 12px;
-      color: var(--text-dim);
-      display: flex;
-      align-items: center;
-      gap: 4px;
     }
 
     /* === FOOTER === */
     footer {
       background: var(--card-bg);
       border-top: 1px solid var(--border);
-      padding: 40px 24px;
-      margin-top: 32px;
+      padding: 32px 20px;
+      margin-top: 24px;
     }
 
     .footer-inner {
@@ -899,19 +833,19 @@
     .footer-top {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 32px;
-      margin-bottom: 32px;
+      gap: 28px;
+      margin-bottom: 24px;
     }
 
     .footer-brand {
-      max-width: 280px;
+      max-width: 300px;
     }
 
     .footer-logo {
       font-family: 'Inter', sans-serif;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .footer-logo span {
@@ -922,28 +856,70 @@
       font-size: 13px;
       color: var(--text-muted);
       line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      background: var(--tag-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+
+    .footer-social a:hover {
+      transform: translateY(-2px);
+    }
+
+    .footer-social .social-line:hover {
+      background: #00B900;
+      border-color: #00B900;
+      color: #fff;
+    }
+
+    .footer-social .social-ig:hover {
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      border-color: transparent;
+      color: #fff;
+    }
+
+    .footer-social .social-threads:hover {
+      background: #000;
+      border-color: #fff;
+      color: #fff;
     }
 
     .footer-links-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: 20px;
     }
 
     .footer-col-title {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       color: var(--text-dim);
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .footer-links {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
     }
 
     .footer-links a {
@@ -956,34 +932,8 @@
       color: var(--text);
     }
 
-    .footer-social {
-      display: flex;
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .footer-social a {
-      width: 36px;
-      height: 36px;
-      background: var(--tag-bg);
-      border: 1px solid var(--border-light);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      color: var(--text-muted);
-      transition: all 0.2s;
-    }
-
-    .footer-social a:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-
     .footer-bottom {
-      padding-top: 24px;
+      padding-top: 20px;
       border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -1006,7 +956,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 8px 16px;
+      padding: 8px 14px;
       border-radius: 8px;
       font-size: 12px;
       font-weight: 600;
@@ -1014,7 +964,7 @@
     }
 
     .footer-cta-line {
-      background: #00b900;
+      background: #00B900;
       color: #fff;
     }
 
@@ -1036,11 +986,15 @@
 
     @media (min-width: 768px) {
       .footer-top {
-        grid-template-columns: 1.5fr 2fr;
+        grid-template-columns: 1.2fr 2fr;
       }
 
       .footer-links-grid {
         grid-template-columns: repeat(3, 1fr);
+      }
+
+      footer {
+        padding: 36px 32px;
       }
     }
 
@@ -1048,7 +1002,7 @@
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(16px);
+        transform: translateY(12px);
       }
       to {
         opacity: 1;
@@ -1057,14 +1011,14 @@
     }
 
     .animate-in {
-      animation: fadeInUp 0.5s ease forwards;
+      opacity: 0;
+      animation: fadeInUp 0.4s ease forwards;
     }
 
     .delay-1 { animation-delay: 0.05s; }
     .delay-2 { animation-delay: 0.1s; }
     .delay-3 { animation-delay: 0.15s; }
     .delay-4 { animation-delay: 0.2s; }
-    .delay-5 { animation-delay: 0.25s; }
   </style>
 </head>
 <body>
@@ -1078,80 +1032,61 @@
       <li><a href="#features">服務</a></li>
       <li><a href="#contact">聯絡</a></li>
     </ul>
-    <a href="#products" class="nav-cta">立即選購</a>
+    <a href="#products" class="nav-cta">逛逛商品</a>
   </nav>
 
   <main>
 
-    <!-- HERO BENTO -->
+    <!-- HERO - SUNO SIMPLICITY -->
     <section class="hero">
-      <div class="hero-main animate-in">
-        <div>
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            大稻埕人氣手作品牌
-          </div>
-          <h1 class="hero-title">緣滾滾<br><em>工作室</em></h1>
-          <p class="hero-desc">台式燙布美學 × 漢房香包DIY。每一件都是手工限定的布作好物，適合送禮也適合為自己選一件小確幸。</p>
+      <div class="hero-content animate-in">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          大稻埕人氣手作品牌
         </div>
+        <h1 class="hero-title">緣滾滾<span>&nbsp;</span><br>工作室</h1>
+        <p class="hero-tagline">台式燙布美學 × 漢房香包DIY。每一件都是手工限定的布作好物。</p>
         <div class="hero-actions">
           <a href="#products" class="btn-primary">
             逛逛商品
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#about" class="btn-secondary">
-            了解更多
-          </a>
+          <a href="#about" class="btn-secondary">了解更多</a>
         </div>
       </div>
-      <div class="hero-aside">
-        <div class="hero-stat-card animate-in delay-1">
-          <div class="stat-number">5<span>+</span></div>
-          <div class="stat-label">精選商品</div>
-        </div>
-        <div class="hero-stat-card animate-in delay-2">
-          <div class="stat-number">1200<span>+</span></div>
-          <div class="stat-label">已售出件數</div>
-        </div>
-        <div class="hero-stat-card animate-in delay-3">
-          <div class="stat-number">4.9</div>
-          <div class="stat-label">顧客滿意度</div>
-        </div>
-        <div class="hero-stat-card animate-in delay-4">
-          <div class="stat-number">100<span>%</span></div>
-          <div class="stat-label">手工製作</div>
-        </div>
+      <div class="hero-image animate-in delay-1">
+        <img src="images/product-wristband-cherry.jpg" alt="緣滾滾工作室商品">
       </div>
     </section>
 
-    <!-- STATS BAR -->
+    <!-- STATS BAR - REAL NUMBERS ONLY -->
     <section class="stats-bar">
-      <div class="stats-bar-item">
+      <div class="stats-bar-item animate-in delay-1">
         <div class="stats-bar-icon">🎨</div>
         <div class="stats-bar-content">
           <div class="stats-bar-number">NT$150 起</div>
           <div class="stats-bar-label">親民價格</div>
         </div>
       </div>
-      <div class="stats-bar-item">
+      <div class="stats-bar-item animate-in delay-2">
+        <div class="stats-bar-icon">🧵</div>
+        <div class="stats-bar-content">
+          <div class="stats-bar-number">100%</div>
+          <div class="stats-bar-label">手工製作</div>
+        </div>
+      </div>
+      <div class="stats-bar-item animate-in delay-3">
         <div class="stats-bar-icon">📦</div>
         <div class="stats-bar-content">
-          <div class="stats-bar-number">7-11 賣貨便</div>
+          <div class="stats-bar-number">7-11</div>
           <div class="stats-bar-label">全台可寄送</div>
         </div>
       </div>
-      <div class="stats-bar-item">
+      <div class="stats-bar-item animate-in delay-4">
         <div class="stats-bar-icon">✂️</div>
         <div class="stats-bar-content">
-          <div class="stats-bar-number">每日趕工</div>
-          <div class="stats-bar-label">下單後 1-3 天出貨</div>
-        </div>
-      </div>
-      <div class="stats-bar-item">
-        <div class="stats-bar-icon">💝</div>
-        <div class="stats-bar-content">
-          <div class="stats-bar-number">送禮首選</div>
-          <div class="stats-bar-label">含精美包裝</div>
+          <div class="stats-bar-number">1-3 天</div>
+          <div class="stats-bar-label">出貨時間</div>
         </div>
       </div>
     </section>
@@ -1169,15 +1104,15 @@
         </a>
       </div>
       <div class="products-grid">
-        <!-- Product 1: Large -->
-        <div class="product-card">
+        <!-- Product 1: Large Featured -->
+        <div class="product-card animate-in">
           <div class="product-card-image">
-            <img src="images/product-wristband-cherry.jpg" alt="運動毛巾腕帶" loading="lazy">
+            <img src="images/product-wristband-cherry.jpg" alt="運動腕帶" loading="lazy">
             <span class="product-card-badge">熱銷</span>
           </div>
           <div class="product-card-body">
             <div class="product-card-category">腕帶</div>
-            <div class="product-card-name"> Cherry 燙布運動腕帶</div>
+            <div class="product-card-name">Cherry 燙布運動腕帶</div>
             <div class="product-card-footer">
               <div class="product-card-price">NT$180 <span>含包裝</span></div>
               <div class="product-card-btn">+</div>
@@ -1185,14 +1120,14 @@
           </div>
         </div>
         <!-- Product 2: Tall -->
-        <div class="product-card">
+        <div class="product-card animate-in delay-1">
           <div class="product-card-image">
-            <img src="images/product-pouch-green.jpg" alt="束口布包" loading="lazy">
+            <img src="images/product-pouch-green.jpg" alt="束口包" loading="lazy">
             <span class="product-card-badge">新款</span>
           </div>
           <div class="product-card-body">
             <div class="product-card-category">束口包</div>
-            <div class="product-card-name"> 森林綠束口小包</div>
+            <div class="product-card-name">森林綠束口小包</div>
             <div class="product-card-footer">
               <div class="product-card-price">NT$280 <span>含包裝</span></div>
               <div class="product-card-btn">+</div>
@@ -1200,13 +1135,13 @@
           </div>
         </div>
         <!-- Product 3 -->
-        <div class="product-card">
+        <div class="product-card animate-in delay-2">
           <div class="product-card-image">
             <img src="images/product-sachet-red.jpg" alt="香包" loading="lazy">
           </div>
           <div class="product-card-body">
             <div class="product-card-category">香包</div>
-            <div class="product-card-name"> 喜氣紅中式香包</div>
+            <div class="product-card-name">喜氣紅中式香包</div>
             <div class="product-card-footer">
               <div class="product-card-price">NT$220 <span>含包裝</span></div>
               <div class="product-card-btn">+</div>
@@ -1214,13 +1149,13 @@
           </div>
         </div>
         <!-- Product 4 -->
-        <div class="product-card">
+        <div class="product-card animate-in delay-3">
           <div class="product-card-image">
             <img src="images/product-patches.jpg" alt="布貼" loading="lazy">
           </div>
           <div class="product-card-body">
             <div class="product-card-category">布貼</div>
-            <div class="product-card-name"> 復古風布貼組</div>
+            <div class="product-card-name">復古風布貼組</div>
             <div class="product-card-footer">
               <div class="product-card-price">NT$150 <span>含包裝</span></div>
               <div class="product-card-btn">+</div>
@@ -1228,14 +1163,14 @@
           </div>
         </div>
         <!-- Product 5 -->
-        <div class="product-card">
+        <div class="product-card animate-in delay-4">
           <div class="product-card-image">
             <img src="images/product-coinpurse.jpg" alt="零錢包" loading="lazy">
             <span class="product-card-badge">限定</span>
           </div>
           <div class="product-card-body">
             <div class="product-card-category">零錢包</div>
-            <div class="product-card-name"> 經典款燙布零錢包</div>
+            <div class="product-card-name">經典款燙布零錢包</div>
             <div class="product-card-footer">
               <div class="product-card-price">NT$350 <span>含包裝</span></div>
               <div class="product-card-btn">+</div>
@@ -1245,7 +1180,46 @@
       </div>
     </section>
 
-    <!-- FEATURES BENTO -->
+    <!-- SOCIAL PROOF -->
+    <section class="social-proof">
+      <div class="proof-header">
+        <div class="proof-rating">
+          <span class="proof-stars">★★★★★</span>
+          <span class="proof-text">5.0 滿意度</span>
+        </div>
+        <span class="proof-tagline">專注手工服務每一件</span>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👧</div>
+            <div>
+              <div class="testimonial-author-name">林小美</div>
+              <div class="testimonial-purchase">購買了森林綠束口小包</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="testimonial-text">很喜歡這次的束口包！做工很細緻，包裝也很精美，送給朋友當生日禮物超合適的～下次會再回購！</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👦</div>
+            <div>
+              <div class="testimonial-author-name">陳先生</div>
+              <div class="testimonial-purchase">購買了 Cherry 運動腕帶</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="testimonial-text">健身用的腕帶很好用，吸水效果不錯，燙布圖案也很可愛。重點是包裝很用心，送禮很有面子！</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES - PARALLEL CARDS -->
     <section class="features-section" id="features">
       <div class="section-label">服務特色</div>
       <h2 class="features-title">為什麼選擇緣滾滾？</h2>
@@ -1254,16 +1228,14 @@
           <div class="feature-icon">🧵</div>
           <div class="feature-content">
             <div class="feature-name">全手工製作</div>
-            <div class="feature-desc">每一件作品都是工作室手工裁剪、燙布、縫製，保有手作的溫度與獨特性。</div>
-            <span class="feature-tag">職人手作</span>
+            <div class="feature-desc">每一件作品都是手工裁剪、燙布、縫製，保有手作的溫度與獨特性。</div>
           </div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🎁</div>
           <div class="feature-content">
             <div class="feature-name">精美包裝</div>
-            <div class="feature-desc">適合送禮，下單即可選擇「禮品包裝」服務，含精美外盒與手寫小卡。</div>
-            <span class="feature-tag">送禮首選</span>
+            <div class="feature-desc">適合送禮，下單即可選擇禮品包裝服務，含精美外盒與手寫小卡。</div>
           </div>
         </div>
         <div class="feature-card">
@@ -1271,50 +1243,22 @@
           <div class="feature-content">
             <div class="feature-name">7-11 賣貨便</div>
             <div class="feature-desc">全台 7-11 皆可取貨付款，物流快速，追蹤便利，購物零負擔。</div>
-            <span class="feature-tag">超商取貨</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT BENTO -->
+    <!-- ABOUT - COMPACT -->
     <section class="about-section" id="about">
-      <div class="about-grid">
-        <div class="about-content">
-          <div class="section-label">關於我們</div>
-          <h2 class="about-heading">大稻埕的<br><em>布作工作室</em></h2>
-          <p class="about-body">緣滾滾工作室成立於台北迪化街，結合台式傳統燙布技法與現代設計美學，創造出風格獨特的布作商品。我們相信，手作的溫度是機器無法取代的。</p>
-          <p class="about-body">從腕帶、束口包到香包、零錢包，每一件作品都承載著我們對品質的堅持與對細節的追求。</p>
-          <div class="about-highlights">
-            <span class="about-highlight"><span class="about-highlight-icon">📍</span> 台北迪化街</span>
-            <span class="about-highlight"><span class="about-highlight-icon">🧵</span> 手工製作</span>
-            <span class="about-highlight"><span class="about-highlight-icon">🎨</span> 燙布美學</span>
-            <span class="about-highlight"><span class="about-highlight-icon">💝</span> 送禮自用</span>
-          </div>
-        </div>
-        <div class="about-image-card">
-          <img src="images/lifestyle-1.jpg" alt="緣滾滾工作室">
-          <div class="about-image-overlay">
-            <span class="about-image-tag">📍 台北市大同區迪化街</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIAL BENTO -->
-    <section class="testimonial-section">
-      <div class="testimonial-card">
-        <div class="testimonial-stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <p class="testimonial-text">很喜歡這次的束口包！做工很細緻，包裝也很精美，送給朋友當生日禮物超合適的～下次會再回購！</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">👧</div>
-          <div class="testimonial-author-info">
-            <div class="testimonial-author-name">林小美</div>
-            <div class="testimonial-author-meta">購買了森林綠束口小包</div>
-          </div>
-          <div class="testimonial-platform">Threads ★★★★★</div>
+      <div class="about-card">
+        <div class="section-label">關於我們</div>
+        <h2 class="about-heading">大稻埕的<span>&nbsp;布作工作室</span></h2>
+        <p class="about-body">緣滾滾工作室成立於台北迪化街，結合台式傳統燙布技法與現代設計美學，創造出風格獨特的布作商品。我們相信，手作的溫度是機器無法取代的。</p>
+        <div class="about-values">
+          <span class="about-value"><span class="about-value-icon">📍</span> 台北迪化街</span>
+          <span class="about-value"><span class="about-value-icon">🧵</span> 手工製作</span>
+          <span class="about-value"><span class="about-value-icon">🎨</span> 燙布美學</span>
+          <span class="about-value"><span class="about-value-icon">💝</span> 送禮自用</span>
         </div>
       </div>
     </section>
@@ -1327,11 +1271,11 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logo">you<span>&</span>Rollie</div>
-          <p class="footer-tagline">台式燙布美學 × 漢房香包DIY。每一件都是手工限定的布作好物，適合送禮也適合為自己選一件小確幸。</p>
+          <p class="footer-tagline">台式燙布美學 × 漢房香包DIY。每一件都是手工限定的布作好物。</p>
           <div class="footer-social">
-            <a href="#" aria-label="Instagram">📷</a>
-            <a href="#" aria-label="Threads">💬</a>
-            <a href="#" aria-label="LINE">💬</a>
+            <a href="#" class="social-line" aria-label="LINE">💬</a>
+            <a href="#" class="social-ig" aria-label="Instagram">📷</a>
+            <a href="#" class="social-threads" aria-label="Threads">🧵</a>
           </div>
         </div>
         <div class="footer-links-grid">
@@ -1357,16 +1301,16 @@
           <div>
             <div class="footer-col-title">聯絡我們</div>
             <ul class="footer-links">
+              <li><a href="#">LINE 官方</a></li>
               <li><a href="#">Instagram</a></li>
               <li><a href="#">Threads</a></li>
-              <li><a href="#">LINE 官方</a></li>
               <li><a href="#">Email</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copyright">© 2026 you& Rollie 緣滾滾工作室. All rights reserved.</p>
+        <p class="footer-copyright">© 2026 you& Rollie 緣滾滾工作室</p>
         <div class="footer-ctas">
           <a href="#" class="footer-cta footer-cta-line">
             💬 加入 LINE
